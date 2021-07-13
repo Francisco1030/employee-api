@@ -7,6 +7,6 @@ module.exports = class DeleteEmployeeUseCase {
 
   async handle(input) {
     const { id } = new InputBoundary(input);
-    await this.employeeRepository.delete(id);
+    return await this.employeeRepository.delete(id);
   }
 }
