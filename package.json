@@ -1,0 +1,40 @@
+{
+  "name": "employee-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/infra/web-server/index.js",
+  "scripts": {
+    "start": "node src/infra/web-server/index.js",
+    "test": "NODE_ENV=test jest  --colors --noStackTrace --passWithNoTests --runInBand --detectOpenHandles --forceExit --coverage",
+    "db:make": "npx knex --knexfile src/infra/config/knexfile.js migrate:make",
+    "db:run": "npx knex --knexfile src/infra/config/knexfile.js migrate:latest",
+    "db:rollback": "npx knex --knexfile src/infra/config/knexfile.js migrate:rollback"
+  },
+  "keywords": [],
+  "author": "Francisco Viana <franciscoviana862@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.943.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fast-glob": "^3.2.5",
+    "knex": "^0.20.13",
+    "mysql": "^2.18.1",
+    "serverless-http": "^2.7.0",
+    "sqlite3": "^5.0.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
+    "prettier": "^2.1.2",
+    "serverless-offline": "^7.0.0"
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}
