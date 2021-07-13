@@ -84,10 +84,6 @@ module.exports = class DynamoDbEmployeeRepository extends EmployeeRepository {
     return entity;
   }
 
-  async destroy(data) {
-    return await this.update({ ...data, deletedAt: new Date() });
-  }
-
   async delete(id) {
     const params = this.#parse({
       Key: {
@@ -95,6 +91,6 @@ module.exports = class DynamoDbEmployeeRepository extends EmployeeRepository {
       }
     });
 
-    await this.conn.delete(params).promise();
+    return await this.conn.delete(params).promise();
   }
 };
