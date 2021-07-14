@@ -5,7 +5,7 @@
   "main": "src/infra/web-server/index.js",
   "scripts": {
     "start": "node src/infra/web-server/index.js",
-    "test": "jest  --colors --noStackTrace --passWithNoTests --runInBand --detectOpenHandles --forceExit --coverage"
+    "test": "jest  --colors --noStackTrace --passWithNoTests --runInBand --detectOpenHandles --forceExit --coverage --silent"
   },
   "keywords": [],
   "author": "Francisco Viana <franciscoviana862@gmail.com>",
